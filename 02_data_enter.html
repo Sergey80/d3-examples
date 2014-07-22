@@ -1,0 +1,31 @@
+<!-- #data #enter #attribute -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+</head>
+
+<body>
+
+<div class="container"></div>
+
+<script>
+    var dataset = [5,10,15,20,25];
+
+    d3.select("body").selectAll("p")            // returns empty Selection (representing a paragraph that does not exist yet)
+            .data(dataset)                      // bind data
+            .enter()                            // creates a new _placeholder_ element
+            .append("p")                        // append new paragraph into the _placeholder_ created by 'enter()'
+            .text("New paragraph");             // ..
+
+    console.log(d3.selectAll("p"));             // shows that each 'p' of all 5 paragraphs contains many attributes (including data from 'dataset')
+</script>
+
+</body>
+
+</html>
+
+</html>

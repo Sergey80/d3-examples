@@ -1,0 +1,33 @@
+<!-- #data-function #anonymous-function-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+</head>
+
+<body>
+
+<div class="container"></div>
+
+<script>
+    var dataset = [5,10,15,20,25];
+
+    d3.select("body").selectAll("p")
+            .data(dataset)                            // it will try to call anonymous function for each "p" that would get the corresponding data item from 'dataset'
+            .enter()
+            .append("p")                              // ..
+            .text(function(d) {return "data=" + d;}); // providing anonymous function to let data() function to call it. where '(d)' an a data item from 'dataset' array
+
+    // so yes, text() may accept "string" of "function" as an argument ..
+
+    console.log(d3.selectAll("p"));             // shows that each 'p' of all 5 paragraphs contains many attributes (including data from 'dataset')
+</script>
+
+</body>
+
+</html>
+
+</html>

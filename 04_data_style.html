@@ -1,0 +1,41 @@
+<!-- #data-function #style-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+</head>
+
+<body>
+
+<div class="container"></div>
+
+<script>
+    var dataset = [5,10,15,20,25];
+
+    d3.select("body").selectAll("p")
+            .data(dataset)
+            .enter()
+            .append("p")
+            .text(function(d) {return "data=" + d;})
+            .style("color", function(d) {               // style !  - expecting a function.
+                               if (d > 15) {            // so we can put some logic in it .. some Threshold-checking
+                                   return "red";
+                               } else {
+                                   return "black";
+                               }
+                            }
+            );
+
+    // so yes, text() may accept "string" of "function" as an argument ..
+
+    console.log(d3.selectAll("p"));             // shows that each 'p' of all 5 paragraphs contains many attributes (including data from 'dataset')
+</script>
+
+</body>
+
+</html>
+
+</html>
