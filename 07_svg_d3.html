@@ -1,0 +1,60 @@
+<!-- #svg #d3 -->
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+</head>
+
+<body>
+
+<style>
+
+</style>
+
+<!-- creating svg from JS/D3 -->
+<script type="text/javascript">
+
+    //Width and height
+    var w = 500;
+    var h = 50;
+
+    //Data
+    var dataset = [ 5, 10, 15, 20, 25 ];
+
+    //Create SVG element
+    var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 500)
+            .attr("height", 50);                // now we have "svg"
+
+    var circles = svg.selectAll("circle")
+            .data(dataset)
+            .enter()
+            .append("circle");                 // add "circle" 5 times
+
+    circles = circles.attr("cx", function(d, i) {        // for each circle ..
+                        return (i * 50) + 25;
+                       })
+            .attr("cy", h/2)                   // apply "cx"/"cy"/"r" attributes
+            .attr("r", function(d) {
+                        return d;
+                       });
+
+    circles.attr("fill", "yellow")            // apply some color and styles
+            .attr("stroke", "orange")
+            .attr("stroke-width", function(d) {
+                return d/2;
+            });
+
+</script>
+
+
+</body>
+
+</html>
+
+</html>
