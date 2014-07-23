@@ -1,0 +1,56 @@
+<!-- #svg style [ #stroke #stroke-width #fill #font-size #font-family #opacity #rgba #layers ] -->
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+</head>
+
+<body>
+
+
+<svg width="500" height="200">                                        <!-- here is our first svg element. invisible container -->
+    <rect x="0" y="0" width="500" height="50" />                      <!-- black rectangle -->
+    <circle cx="100" cy="100" r="25" />                               <!-- black circle -->
+    <ellipse cx="250" cy="100" rx="100" ry="25" stroke="yellow" stroke-width="5"/>     <!-- eclipse with yellow border / stroke -->
+    <line x1="0" y1="0" x2="500" y2="200" stroke="red" />             <!-- red line -->
+    <text x="250" y="200" fill="grey" font-size="20" font-family="Arial">Here we are</text>   <!-- some text with some style/colors/fonts -->
+</svg>
+
+<!-- for next SVG, CSS styles are applied -->
+<style>
+    svg .pumpkin {
+        fill: yellow;
+        stroke: orange;
+        stroke-width: 5;
+        opacity : 0.5;      <!-- 50% transparent -->
+    }
+</style>
+
+<svg width="500" height="200">                                       <!-- this svg is located on the right side - behaves not like DIV -->
+    <circle cx="25" cy="25" r="22" class="pumpkin"/>                 <!-- use "class" attribute to apply css-styles -->
+</svg>
+
+<!-- in SVG there is no notion of "layer" ! -->
+<div>
+    <svg width="500" height="500">
+        <circle cx="25" cy="25" r="20" fill="rgba(128, 0, 128, 1.0)"/>   <!-- another style to apply colors and "opacity" -->
+        <circle cx="50" cy="25" r="20" fill="rgba(0, 0, 255, 0.75)"/>
+        <circle cx="75" cy="25" r="20" fill="rgba(0, 255, 0, 0.5)"/>
+        <circle cx="100" cy="25" r="20" fill="rgba(255, 255, 0, 0.25)"/>
+        <circle cx="125" cy="25" r="20" fill="rgba(255, 0, 0, 0.1)"/>
+    </svg>
+</div>
+
+<script>
+
+</script>
+
+</body>
+
+</html>
+
+</html>
