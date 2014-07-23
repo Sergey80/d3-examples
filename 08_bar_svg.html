@@ -5,10 +5,13 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 
-
+<!-- do not use quotes ! I mean, don't do this: fill: "green" but this: fill: green -->
 <style type="text/css">
     svg .bar {
-        fill: "green"
+        fill: green
+    }
+    svg text {
+        fill: white
     }
 </style>
 
@@ -53,8 +56,7 @@
             .append("text")
             .text(                          function(d) {return d})
             .attr("x",                      function(d, index) {return index * (barWidth) + barWidth/4} )
-            .attr("y",                      function(d) {return h - d * scale + 15})
-            .attr("fill", "white");
+            .attr("y",                      function(d) {return h - d * scale + 15});
 
 //    rects.attr("fill", "teal").attr("stroke", "black");                     // colors
 
