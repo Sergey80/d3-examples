@@ -15,4 +15,5 @@ Links:
 ===
 - **Tutorial**:   http://alignedleft.com/tutorials/d3
 - **Selections**: http://bost.ocks.org/mike/selection/
+- **Scale**:      http://synthesis.sbecker.net/articles/2012/07/16/learning-d3-part-6-scales-colors
 - **Wiki**:       https://github.com/mbostock/d3/wiki

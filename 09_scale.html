@@ -1,0 +1,24 @@
+<!-- #bar #svg #rect #css #index #labels -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<body>
+<script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+
+<script>
+    var dataset = [ 100, 200, 300, 400, 500 ];
+
+
+    var scale = d3.scale.linear()
+            .domain([100, 500])         // min-max values in your data
+            .range([10, 350]);          // min-max of the visual range / axis
+
+    scale(100);  //Returns 10           - takes a domain data item value and returns us where we are on the visual range
+    scale(300);  //Returns 180
+    scale(500);  //Returns 350
+
+// TODO: ... demo
+
+</script>
+</body>
+
