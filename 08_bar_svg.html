@@ -1,0 +1,65 @@
+<!-- #bar #svg #rect #css #index #labels -->
+
+<!-- here we DO use SVG but not DIVs -->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+
+<style type="text/css">
+    svg .bar {
+        fill: "green"
+    }
+</style>
+
+
+<body>
+
+<script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+
+<script>
+    var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+        11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+
+    // Width and height
+    var w = 500;
+    var h = 100;
+
+    var scale = 4;
+
+    var barPadding = 1;
+
+    var barWidth = w / dataset.length;
+
+    var svg = d3.select("body")
+                .append("svg")
+                .attr("width", w)
+                .attr("height", h);
+
+    var rects = svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect") // using SVG's rect
+            .attr("x",                              function(d, index) {return index * (barWidth)})    // second param is "index"
+            .attr("y",                              function(d) {return h - d * scale} )                             // make it not "up-side-down"
+            .attr("width", barWidth - barPadding)
+            .attr("height",                         function(d) {return d * scale})
+            .attr("class", "bar");                  // add a class to make css to be applied on it
+
+    var texts = svg.selectAll("text")            // labels
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(                          function(d) {return d})
+            .attr("x",                      function(d, index) {return index * (barWidth) + barWidth/4} )
+            .attr("y",                      function(d) {return h - d * scale + 15})
+            .attr("fill", "white");
+
+//    rects.attr("fill", "teal").attr("stroke", "black");                     // colors
+
+</script>
+
+
+</body>
+
