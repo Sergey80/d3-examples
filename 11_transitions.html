@@ -1,0 +1,34 @@
+<!-- #transitions-->
+
+<!-- To change values gradually, over time we use a transition.  -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<body>
+<script type="text/javascript" charset="utf-8" src="lib/d3.js"></script>
+
+<script type="text/javascript">
+
+    var dataset = [1];
+
+    var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 500)
+            .attr("height", 500);                // now we have "svg"
+
+    var circles = svg.selectAll("circle")
+            .data(dataset)
+            .enter().append("circle")
+            .style("stroke", "gray")
+            .style("fill", "black")
+            .attr("r", 50)
+            .attr("cx", 100)
+            .attr("cy", 100);
+
+    circles.transition().duration(5000).attr("r", "0");                     // getting smaller and smaller and smaller ...
+
+    circles.transition().delay(5000).duration(5000).attr("r", "50");        // after some "daley" everything goes back to normal
+
+</script>
+
+</body>
