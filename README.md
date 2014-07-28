@@ -13,8 +13,9 @@ Each example has no more than 100 lines of code. Also there is tagging is used i
 
 Links:
 ===
-- **Tutorial**:          http://alignedleft.com/tutorials/d3
-- **Selections**:        http://bost.ocks.org/mike/selection/
-- **Scale**:             http://synthesis.sbecker.net/articles/2012/07/16/learning-d3-part-6-scales-colors
-- **Wiki**:              https://github.com/mbostock/d3/wiki
-- **Tips and tricks**:  https://leanpub.com/D3-Tips-and-Tricks/read
+- **Tutorial**:               http://alignedleft.com/tutorials/d3
+-- **Interactive Tutorial**:  http://alignedleft.com/projects/2014/easy-as-pi/
+- **Selections**:             http://bost.ocks.org/mike/selection/
+- **Scale**:                  http://synthesis.sbecker.net/articles/2012/07/16/learning-d3-part-6-scales-colors
+- **Wiki**:                   https://github.com/mbostock/d3/wiki
+- **Tips and tricks**:        https://leanpub.com/D3-Tips-and-Tricks/read
