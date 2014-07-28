@@ -25,9 +25,12 @@
             .attr("cx", function(d) {return d * 50;})
             .attr("cy", 100);
 
-    circles.transition().duration(5000).attr("r", "0");                     // getting smaller and smaller and smaller ...
-
-    circles.transition().delay(5000).duration(5000).attr("r", "50");        // after some "daley" everything goes back to normal
+    circles.transition()                                                // just a bit more interesting example
+            .delay(function(d, index) {     // Each circle made the same transition, but they began at different times.
+                return index * 500;         // The first one began immediately, and each subsequent transition kicked off with an additional 1500ms.
+            })
+            .duration(5000)
+            .attr("r", "0");                // up to 0 .. until disappear
 
 </script>
 
